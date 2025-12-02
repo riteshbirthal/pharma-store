@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[47257,["/pharma-store/_next/static/chunks/ff1a16fafef87110.js","/pharma-store/_next/static/chunks/247eb132b7f7b574.js"],"ClientPageRoot"]
+3:I[262,["/pharma-store/_next/static/chunks/04c6c4156556a7a5.js","/pharma-store/_next/static/chunks/41778780774fd6ed.js"],"default"]
+6:I[97367,["/pharma-store/_next/static/chunks/ff1a16fafef87110.js","/pharma-store/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"buildId":"oBms9upfKVkw3S30TVe5o","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/pharma-store/_next/static/chunks/41778780774fd6ed.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+4:{}
+5:{}
+8:null
