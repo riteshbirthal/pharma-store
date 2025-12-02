@@ -8,8 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build"
+    "export": "next export",
+    "deploy": "rm -rf out && next build && next export && gh-pages -d out",
+    "predeploy": "npm run export"
   },
   "dependencies": {
     "baseline-browser-mapping": "^2.8.32",
