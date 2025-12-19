@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { HashRouter } from 'react-router-dom'
 
-const basename = process.env.PUBLIC_URL || ''
+const basename = 'https://riteshbirthal.github.io/pharma-store/'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
