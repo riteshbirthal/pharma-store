@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import products from '../data/products'
+import ImageWithFallback from '../components/ImageWithFallback'
 
 export default function Product(){
   const { id } = useParams()
