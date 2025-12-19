@@ -8,17 +8,19 @@ Simple Vite + React app for Shree Shyam Medicos.
 
    npm install
 
-2. Start dev server (Parcel)
+2. Start dev server
 
-   npm run dev
+   npm start
 
 3. Build for production
 
    npm run build
 
-4. Preview production build
+4. Deploy to GitHub pages
 
-   (Use a simple static server to serve `dist`, e.g. `npx serve dist`)
+   npm run deploy
+
+Notes: This project uses Create React App. The build output goes to `build` and the `deploy` script publishes that folder to GitHub Pages (configured with the `homepage` field in `package.json`).
 
 ---
 

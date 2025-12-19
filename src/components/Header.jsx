@@ -7,7 +7,7 @@ export default function Header(){
     <header className="nav">
       <div className="brand">Shree Shyam Medicos</div>
 
-      <nav className={`nav-main ${open? 'open':''}`} aria-label="Main navigation" aria-expanded={open}>
+      <nav className={`nav-main ${open? 'open':''}`} aria-label="Main navigation">
         <Link to="/" onClick={()=>setOpen(false)}>Home</Link>
         <Link to="/products" onClick={()=>setOpen(false)}>Products</Link>
         <Link to="/contact" onClick={()=>setOpen(false)}>Contact</Link>
