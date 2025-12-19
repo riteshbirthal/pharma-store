@@ -15,7 +15,7 @@ export default function Product(){
   return (
     <div className="product-detail">
       <div className="product-detail-main">
-        <img src={product.image} alt={product.name} className="product-image"/>
+        <ImageWithFallback src={product.image} alt={product.name} className="product-image" />
         <div>
           <h1>{product.name}</h1>
           <p className="muted">{product.desc}</p>

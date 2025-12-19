@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import products from '../data/products'
+import useTilt from '../hooks/useTilt'
+import ImageWithFallback from '../components/ImageWithFallback'
 
 export default function Home(){
+  const tiltRef = useTilt({ maxRotate: 10, tz: 18 })
   return (
     <div>
-      <section className="hero-inner">
+      <section className="hero-inner tilt" ref={tiltRef}>
         <div>
           <h1>Shree Shyam Medicos</h1>
           <p className="tag">Trusted care. Real people. Practical solutions.</p>
@@ -14,13 +17,13 @@ export default function Home(){
             <Link to="/products" className="btn outline">View Products</Link>
           </div>
         </div>
-        <img src="/images/shop.svg" alt="Shop" className="hero-photo" />
+        <ImageWithFallback src={process.env.PUBLIC_URL + '/images/shop.jpg'} alt="Shop" className="hero-photo" />
       </section>
 
       <section className="section">
         <div className="cards-row">
           <aside className="owner-card">
-            <img src="/images/owner.svg" alt="Owner" className="owner-photo" />
+            <ImageWithFallback src={process.env.PUBLIC_URL + '/images/owner.jpg'} alt="Owner" className="owner-photo" />
             <div className="owner-info">
               <h3>Dr. Rakesh Kumar</h3>
               <p>Committed to quality and timely service. Ask us about alternatives and availability.</p>

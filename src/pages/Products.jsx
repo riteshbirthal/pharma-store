@@ -1,6 +1,7 @@
 import React from 'react'
 import products from '../data/products'
 import { Link } from 'react-router-dom'
+import ImageWithFallback from '../components/ImageWithFallback'
 
 export default function Products(){
   return (
@@ -13,7 +14,7 @@ export default function Products(){
       <div className="product-grid" style={{marginTop:12}}>
         {products.map(p => (
           <div key={p.id} className="product-card">
-            <img src={p.image} alt={p.name} className="product-thumb-image"/>
+            <ImageWithFallback src={p.image} alt={p.name} className="product-thumb-image" />
             <div className="product-body">
               <h4>{p.name}</h4>
               <p className="muted">{p.desc}</p>
