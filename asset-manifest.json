@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pharma-store/static/css/main.e8f0a7ea.css",
-    "main.js": "/pharma-store/static/js/main.013dbe51.js",
+    "main.css": "/pharma-store/static/css/main.a8642de1.css",
+    "main.js": "/pharma-store/static/js/main.a33edba0.js",
     "index.html": "/pharma-store/index.html",
-    "main.e8f0a7ea.css.map": "/pharma-store/static/css/main.e8f0a7ea.css.map",
-    "main.013dbe51.js.map": "/pharma-store/static/js/main.013dbe51.js.map"
+    "main.a8642de1.css.map": "/pharma-store/static/css/main.a8642de1.css.map",
+    "main.a33edba0.js.map": "/pharma-store/static/js/main.a33edba0.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8f0a7ea.css",
-    "static/js/main.013dbe51.js"
+    "static/css/main.a8642de1.css",
+    "static/js/main.a33edba0.js"
   ]
 }
