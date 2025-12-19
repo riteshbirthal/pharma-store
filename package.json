@@ -1,31 +1,21 @@
 {
   "name": "pharma-store",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "homepage": "https://riteshbirthal.github.io/pharma-store",
+  "description": "Simple React app for Shree Shyam Medicos shop",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "deploy": "node -e \"require('fs').rmSync('out',{recursive:true,force:true})\" && npm run build && gh-pages -d out",
-    "predeploy": "npm run build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "next": "16.0.5",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "gh-pages": "^6.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "baseline-browser-mapping": "^2.8.32",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.5",
-    "gh-pages": "^6.3.0",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "vite": "^5.0.0"
   }
 }
