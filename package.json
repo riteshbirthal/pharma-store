@@ -4,9 +4,9 @@
   "private": true,
   "description": "Simple React app for Shree Shyam Medicos shop",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "start": "parcel index.html",
+    "dev": "parcel index.html --open",
+    "build": "parcel build index.html --dist-dir dist",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,8 +18,7 @@
     "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.2",
     "gh-pages": "^6.3.0",
-    "vite": "^5.0.0"
+    "parcel": "2.16.3"
   }
 }

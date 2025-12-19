@@ -8,7 +8,7 @@ Simple Vite + React app for Shree Shyam Medicos.
 
    npm install
 
-2. Start dev server
+2. Start dev server (Parcel)
 
    npm run dev
 
@@ -18,7 +18,7 @@ Simple Vite + React app for Shree Shyam Medicos.
 
 4. Preview production build
 
-   npm run preview
+   (Use a simple static server to serve `dist`, e.g. `npx serve dist`)
 
 ---
 
