@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pharma-store/static/css/main.e8f0a7ea.css",
+    "main.js": "/pharma-store/static/js/main.013dbe51.js",
+    "index.html": "/pharma-store/index.html",
+    "main.e8f0a7ea.css.map": "/pharma-store/static/css/main.e8f0a7ea.css.map",
+    "main.013dbe51.js.map": "/pharma-store/static/js/main.013dbe51.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8f0a7ea.css",
+    "static/js/main.013dbe51.js"
+  ]
+}
