@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0b6e4f"/><stop offset="1" stop-color="#2aa37f"/></linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#fff" rx="8"/>
+  <g transform="translate(20,20)">
+    <rect width="360" height="160" rx="8" fill="url(#g)" opacity="0.12"/>
+    <text x="180" y="94" font-size="20" text-anchor="middle" fill="#044c37">Paracetamol</text>
+    <text x="180" y="118" font-size="12" text-anchor="middle" fill="#666">500 mg • 10 tabs</text>
+  </g>
+</svg>
