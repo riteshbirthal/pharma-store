@@ -1,7 +1,9 @@
 # Stage 1: Build the React application
-FROM node:18-alpine AS build
+FROM node:20.13.1-alpine AS build
 
 WORKDIR /app
+
+RUN apk update && apk upgrade
 
 COPY package.json ./
 COPY package-lock.json ./
@@ -13,9 +15,11 @@ COPY . ./
 RUN npm run build
 
 # Stage 2: Serve the application from a lightweight server
-FROM node:18-alpine
+FROM node:20.13.1-alpine
 
 WORKDIR /app
+
+RUN apk update && apk upgrade
 
 COPY --from=build /app/build ./build
 COPY package.json ./
