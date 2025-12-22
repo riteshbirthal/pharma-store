@@ -15,7 +15,7 @@ export default function Home() {
           <h1>Shree Shyam Medicos</h1>
           <p className="lead">Trusted care. Real people. Practical solutions.</p>
           <p>
-            <a className="btn btn-primary me-2" href="tel:+919876543210">Call Now</a>
+            <a className="btn btn-primary me-2" href="tel:+917056737974">Call Now</a>
             <Link to="/products" className="btn btn-outline-secondary">View Products</Link>
           </p>
         </Col>
