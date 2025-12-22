@@ -1,38 +1,50 @@
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
-import products from '../data/products'
-import ImageWithFallback from '../components/ImageWithFallback'
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import products from '../data/products';
+import ImageWithFallback from '../components/ImageWithFallback';
+import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 
-export default function Product(){
-  const { id } = useParams()
-  const product = products.find(p => p.id === id)
-  if(!product) return (
-    <div>
-      <p>Product not found</p>
-      <Link to="/products" className="btn">Back to products</Link>
-    </div>
-  )
+export default function Product() {
+  const { id } = useParams();
+  const product = products.find(p => p.id === id);
+
+  if (!product) {
+    return (
+      <Container className="text-center my-5">
+        <p>Product not found</p>
+        <Link to="/products" className="btn btn-primary">Back to products</Link>
+      </Container>
+    );
+  }
 
   return (
-    <div className="product-detail">
-      <div className="product-detail-main">
-        <ImageWithFallback src={product.image} alt={product.name} className="product-image" />
-        <div>
+    <Container>
+      <Row className="my-5">
+        <Col md={6}>
+          <ImageWithFallback src={product.image} alt={product.name} className="img-fluid rounded" />
+        </Col>
+        <Col md={6}>
           <h1>{product.name}</h1>
-          <p className="muted">{product.desc}</p>
-          <p className="price">₹{product.price}</p>
+          <p className="text-muted">{product.desc}</p>
+          <h2>₹{product.price}</h2>
           <p>Stock: {product.stock}</p>
-          <div style={{marginTop:12}}>
-            <button className="btn primary">Add to cart</button>
-            <Link to="/contact" className="btn outline" style={{marginLeft:8}}>Contact</Link>
-          </div>
-        </div>
-      </div>
+          <Button variant="primary" className="me-2">Add to cart</Button>
+          <Link to="/contact" className="btn btn-outline-secondary">Contact</Link>
+        </Col>
+      </Row>
 
-      <div className="about">
-        <h3>Usage & details</h3>
-        <p>For general use only. Read instructions and consult a doctor if needed.</p>
-      </div>
-    </div>
-  )
+      <Row>
+        <Col>
+          <Card>
+            <Card.Body>
+              <Card.Title>Usage & details</Card.Title>
+              <Card.Text>
+                For general use only. Read instructions and consult a doctor if needed.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
 }

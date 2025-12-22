@@ -1,23 +1,30 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-export default function Header(){
-  const [open, setOpen] = useState(false)
+export default function Header() {
   return (
-    <header className="nav">
-      <div className="brand">Shree Shyam Medicos</div>
-
-      <nav className={`nav-main ${open? 'open':''}`} aria-label="Main navigation">
-        <Link to="/" onClick={()=>setOpen(false)}>Home</Link>
-        <Link to="/products" onClick={()=>setOpen(false)}>Products</Link>
-        <Link to="/contact" onClick={()=>setOpen(false)}>Contact</Link>
-      </nav>
-
-      <div className="nav-actions">
-        <input className="search" placeholder="Search" aria-label="Search" />
-        <Link to="/contact" className="btn primary" onClick={()=>setOpen(false)}>Contact</Link>
-        <button className="mobile-toggle" onClick={()=>setOpen(s=>!s)} aria-label="Toggle menu" aria-expanded={open}>{open? '✕' : '☰'}</button>
-      </div>
-    </header>
-  )
+    <Navbar bg="dark" variant="dark" expand="md">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Shree Shyam Medicos</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/products">Products</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <FormControl
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }

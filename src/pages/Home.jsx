@@ -1,66 +1,82 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import products from '../data/products'
-import useTilt from '../hooks/useTilt'
-import ImageWithFallback from '../components/ImageWithFallback'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import products from '../data/products';
+import ImageWithFallback from '../components/ImageWithFallback';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import ProductCard from '../components/ProductCard';
+import Gallery from '../components/Gallery';
 
-export default function Home(){
-  const tiltRef = useTilt({ maxRotate: 10, tz: 18 })
+export default function Home() {
+  const galleryImages = [
+    { src: process.env.PUBLIC_URL + '/images/shop.jpg', alt: 'Shop view' },
+    { src: process.env.PUBLIC_URL + '/images/owner.jpg', alt: 'Owner' },
+    { src: process.env.PUBLIC_URL + '/images/1.png', alt: 'Gallery image 1' },
+    { src: process.env.PUBLIC_URL + '/images/2.png', alt: 'Gallery image 2' },
+    { src: process.env.PUBLIC_URL + '/images/3.png', alt: 'Gallery image 3' },
+    { src: process.env.PUBLIC_URL + '/images/4.png', alt: 'Gallery image 4' },
+  ];
+
   return (
-    <div>
-      <section className="hero-inner tilt" ref={tiltRef}>
-        <div>
+    <Container>
+      <Row className="my-5 p-5 bg-light rounded-3">
+        <Col md={8}>
           <h1>Shree Shyam Medicos</h1>
-          <p className="tag">Trusted care. Real people. Practical solutions.</p>
-          <div className="hero-ctas">
-            <a className="btn primary" href="tel:+919876543210">Call Now</a>
-            <Link to="/products" className="btn outline">View Products</Link>
-          </div>
-        </div>
-        <ImageWithFallback src={process.env.PUBLIC_URL + '/images/shop.jpg'} alt="Shop" className="hero-photo" />
-      </section>
-
-      <section className="section">
-        <div className="cards-row">
-          <aside className="owner-card">
-            <ImageWithFallback src={process.env.PUBLIC_URL + '/images/owner.jpg'} alt="Owner" className="owner-photo" />
-            <div className="owner-info">
-              <h3>Dr. Rakesh Kumar</h3>
-              <p>Committed to quality and timely service. Ask us about alternatives and availability.</p>
-            </div>
-          </aside>
-
-          <div className="products">
-            <div className="section-head">
-              <h2>Popular Items</h2>
-              <small className="muted">Reliable brands, affordable prices</small>
-            </div>
-
-            <div className="product-grid">
-              {products.slice(0,4).map(p => (
-                <article key={p.id} className="product-card">
-                  <div className="product-thumb" aria-hidden></div>
-                  <div className="product-body">
-                    <h4>{p.name}</h4>
-                    <p className="muted">{p.desc}</p>
-                    <div className="product-foot">
-                      <div className="price">₹{p.price}</div>
-                      <Link to={`/product/${p.id}`} className="btn">Details</Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="about">
-          <h2>About Shree Shyam Medicos</h2>
+          <p className="lead">Trusted care. Real people. Practical solutions.</p>
           <p>
-            We provide essential medicines and wellness products. Our staff helps you find what you need quickly.
+            <a className="btn btn-primary me-2" href="tel:+919876543210">Call Now</a>
+            <Link to="/products" className="btn btn-outline-secondary">View Products</Link>
           </p>
-        </div>
-      </section>
-    </div>
-  )
+        </Col>
+        <Col md={4}>
+          <ImageWithFallback src={process.env.PUBLIC_URL + '/images/shop.jpg'} alt="Shop" className="img-fluid rounded" />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md={4}>
+          <Card className="mb-4">
+            <ImageWithFallback src={process.env.PUBLIC_URL + '/images/owner.jpg'} alt="Owner" className="card-img-top" />
+            <Card.Body>
+              <Card.Title>Dr. Rakesh Kumar</Card.Title>
+              <Card.Text>
+                Committed to quality and timely service. Ask us about alternatives and availability.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Body>
+              <Card.Title>Gallery</Card.Title>
+              <Gallery images={galleryImages} />
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={8}>
+          <div className="p-3 bg-white rounded-3">
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h2>Popular Items</h2>
+              <Link to="/products" className="btn btn-primary">View All</Link>
+            </div>
+            <p className="text-muted">Reliable brands, affordable prices</p>
+            <Row>
+              {products.slice(0, 3).map(p => (
+                <ProductCard product={p} key={p.id} />
+              ))}
+            </Row>
+          </div>
+        </Col>
+      </Row>
+
+      <Row className="my-5">
+        <Col>
+          <div className="p-5 bg-light rounded-3">
+            <h2>About Shree Shyam Medicos</h2>
+            <p>
+              We provide essential medicines and wellness products. Our staff helps you find what you need quickly.
+            </p>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
 }

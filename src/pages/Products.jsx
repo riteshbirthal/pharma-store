@@ -1,31 +1,21 @@
-import React from 'react'
-import products from '../data/products'
-import { Link } from 'react-router-dom'
-import ImageWithFallback from '../components/ImageWithFallback'
+import React from 'react';
+import products from '../data/products';
+import { Container, Row } from 'react-bootstrap';
+import ProductCard from '../components/ProductCard';
 
-export default function Products(){
+export default function Products() {
   return (
-    <div>
-      <div className="section-head">
+    <Container>
+      <div className="my-4">
         <h2>All Products</h2>
-        <small className="muted">Browse our catalog</small>
+        <p className="text-muted">Browse our catalog</p>
       </div>
 
-      <div className="product-grid" style={{marginTop:12}}>
+      <Row>
         {products.map(p => (
-          <div key={p.id} className="product-card">
-            <ImageWithFallback src={p.image} alt={p.name} className="product-thumb-image" />
-            <div className="product-body">
-              <h4>{p.name}</h4>
-              <p className="muted">{p.desc}</p>
-              <div className="product-foot">
-                <div className="price">₹{p.price}</div>
-                <Link to={`/product/${p.id}`} className="btn">Details</Link>
-              </div>
-            </div>
-          </div>
+          <ProductCard product={p} key={p.id} />
         ))}
-      </div>
-    </div>
-  )
+      </Row>
+    </Container>
+  );
 }
