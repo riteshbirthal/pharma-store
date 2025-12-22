@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const placeholderSVG = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'>
   <defs>
@@ -8,9 +8,8 @@ const placeholderSVG = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' hei
     </linearGradient>
   </defs>
   <rect fill='url(#g)' width='100%' height='100%'/>
-  <g fill='#9aa4a3' font-family='Inter, Arial, sans-serif' font-size='28' text-anchor='middle'>
+  <g fill='#9aa4a3' font-family='Inter, Arial, sans-serif' text-anchor='middle'>
     <text x='50%' y='48%'>Image not available</text>
-    <text x='50%' y='60%' font-size='18'>Replace with a real photo at /public/images/</text>
   </g>
 </svg>`
 
@@ -18,12 +17,17 @@ const placeholderDataUri = `data:image/svg+xml;utf8,${encodeURIComponent(placeho
 
 export default function ImageWithFallback({ src, alt = '', className = '', style = {} }){
   const [cur, setCur] = useState(src)
+
+  useEffect(() => {
+    setCur(src);
+  }, [src]);
+
   return (
     <img
       src={cur}
       alt={alt}
       className={className}
-      style={style}
+      style={{ ...style, width: '100%' }}
       onError={() => { if(cur !== placeholderDataUri) setCur(placeholderDataUri) }}
       loading="lazy"
     />

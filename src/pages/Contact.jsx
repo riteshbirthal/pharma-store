@@ -33,7 +33,7 @@ export default function Contact() {
   return (
     <Container className="my-5">
       <Row>
-        <Col md={6}>
+        <Col md={6} className="mb-4 mb-md-0">
           <Card className="shadow-sm">
             <Card.Body className="p-4">
               <Card.Title>Contact Us</Card.Title>

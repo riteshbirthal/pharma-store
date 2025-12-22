@@ -20,10 +20,12 @@ export default function Product() {
   return (
     <Container>
       <Row className="my-5">
-        <Col md={6}>
-          <ImageWithFallback src={process.env.PUBLIC_URL + product.image} alt={product.name} className="img-fluid rounded" />
+        <Col md={6} className="mb-4 mb-md-0">
+          <div className="img-container">
+            <ImageWithFallback src={process.env.PUBLIC_URL + product.image} alt={product.name} className="img-fluid rounded" />
+          </div>
         </Col>
-        <Col md={6}>
+        <Col md={6} className="text-center text-md-start">
           <h1>{product.name}</h1>
           <p className="text-muted">{product.desc}</p>
           <h2>₹{product.price}</h2>

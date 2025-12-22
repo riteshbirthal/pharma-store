@@ -10,8 +10,8 @@ import Gallery from '../components/Gallery';
 export default function Home() {
   return (
     <Container>
-      <Row className="my-5 p-5 bg-light rounded-3">
-        <Col md={8}>
+      <Row className="my-5 p-3 p-md-5 bg-light rounded-3 text-center text-md-start align-items-center">
+        <Col md={9}>
           <h1>Shree Shyam Medicos</h1>
           <p className="lead">Trusted care. Real people. Practical solutions.</p>
           <p>
@@ -19,15 +19,21 @@ export default function Home() {
             <Link to="/products" className="btn btn-outline-secondary">View Products</Link>
           </p>
         </Col>
-        <Col md={4}>
-          <ImageWithFallback src={process.env.PUBLIC_URL + '/images/shop.jpg'} alt="Shop" className="img-fluid rounded" />
+        <Col md={3} className="mb-4 mb-md-0">
+          <div className="img-container">
+            <ImageWithFallback src={process.env.PUBLIC_URL + '/images/shop.jpeg'} alt="Shop" className="img-fluid rounded" />
+          </div>
         </Col>
       </Row>
 
       <Row>
-        <Col md={4}>
-          <Card className="mb-4">
-            <ImageWithFallback src={process.env.PUBLIC_URL + '/images/owner.jpg'} alt="Owner" className="card-img-top" />
+        <Col md={4} className="mb-4 mb-md-0">
+          <Card className="mb-4 text-center">
+            <div className="d-flex justify-content-center p-3">
+                <div className="img-container-circle" style={{ width: '150px' }}>
+                    <ImageWithFallback src={process.env.PUBLIC_URL + '/images/owner.jpeg'} alt="Owner" className="card-img-top" />
+                </div>
+            </div>
             <Card.Body>
               <Card.Title>Dr. Rakesh Kumar</Card.Title>
               <Card.Text>
@@ -61,7 +67,7 @@ export default function Home() {
 
       <Row className="my-5">
         <Col>
-          <div className="p-5 bg-light rounded-3">
+          <div className="p-3 p-md-5 bg-light rounded-3">
             <h2>About Shree Shyam Medicos</h2>
             <p>
               We provide essential medicines and wellness products. Our staff helps you find what you need quickly.

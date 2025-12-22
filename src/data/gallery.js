@@ -1,5 +1,5 @@
 const galleryImages = [
-  { src: '/images/gallery/gallery1.jpg', alt: 'Gallery image 1' },
+  { src: '/images/gallery/gallery1.jpeg', alt: 'Gallery image 1' },
   { src: '/images/gallery/gallery2.jpg', alt: 'Gallery image 2' },
   { src: '/images/gallery/gallery3.jpg', alt: 'Gallery image 3' },
   { src: '/images/gallery/gallery4.jpg', alt: 'Gallery image 4' },

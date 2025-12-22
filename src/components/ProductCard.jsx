@@ -7,9 +7,11 @@ import ImageWithFallback from './ImageWithFallback';
 export default function ProductCard({ product }) {
     const tiltRef = useTilt({ maxRotate: 10, tz: 18 });
     return (
-        <Col md={4} key={product.id} className="mb-4">
+        <Col sm={6} md={4} lg={3} key={product.id} className="mb-4">
             <Card ref={tiltRef} className="tilt h-100">
-                <ImageWithFallback src={product.image} alt={product.name} className="card-img-top" />
+                <div className="img-container">
+                    <ImageWithFallback src={process.env.PUBLIC_URL + product.image} alt={product.name} className="card-img-top" />
+                </div>
                 <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>{product.desc}</Card.Text>
