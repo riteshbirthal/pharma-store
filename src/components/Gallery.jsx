@@ -18,7 +18,7 @@ export default function Gallery({ images }) {
         {images.slice(0, 3).map((image, index) => (
           <Col xs={4} key={index} className="mb-3">
             <ImageWithFallback
-              src={image.src}
+              src={process.env.PUBLIC_URL + image.src}
               alt={image.alt}
               className="img-fluid rounded"
               onClick={() => handleShowImage(image)}
@@ -48,7 +48,7 @@ export default function Gallery({ images }) {
             {images.map((image, index) => (
               <Col xs={4} key={index} className="mb-3">
                 <ImageWithFallback
-                  src={image.src}
+                  src={process.env.PUBLIC_URL + image.src}
                   alt={image.alt}
                   className="img-fluid rounded"
                   onClick={() => handleShowImage(image)}
@@ -63,7 +63,7 @@ export default function Gallery({ images }) {
       <Modal show={!!showImage} onHide={handleCloseImage} centered size="xl">
         {showImage && (
           <ImageWithFallback
-            src={showImage.src}
+            src={process.env.PUBLIC_URL + showImage.src}
             alt={showImage.alt}
             className="img-fluid"
           />

@@ -1,9 +1,16 @@
-import React from 'react';
-import products from '../data/products';
+import React, { useContext } from 'react';
+import products from '../data/products.js';
 import { Container, Row } from 'react-bootstrap';
 import ProductCard from '../components/ProductCard';
+import { SearchContext } from '../context/SearchContext';
 
 export default function Products() {
+  const { searchQuery } = useContext(SearchContext);
+
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <Container>
       <div className="my-4">
@@ -12,9 +19,13 @@ export default function Products() {
       </div>
 
       <Row>
-        {products.map(p => (
-          <ProductCard product={p} key={p.id} />
-        ))}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map(p => (
+            <ProductCard product={p} key={p.id} />
+          ))
+        ) : (
+          <p>No products found matching your search.</p>
+        )}
       </Row>
     </Container>
   );

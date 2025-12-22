@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import products from '../data/products';
+import products from '../data/products.js';
 import ImageWithFallback from '../components/ImageWithFallback';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 
@@ -21,7 +21,7 @@ export default function Product() {
     <Container>
       <Row className="my-5">
         <Col md={6}>
-          <ImageWithFallback src={product.image} alt={product.name} className="img-fluid rounded" />
+          <ImageWithFallback src={process.env.PUBLIC_URL + product.image} alt={product.name} className="img-fluid rounded" />
         </Col>
         <Col md={6}>
           <h1>{product.name}</h1>
@@ -39,7 +39,7 @@ export default function Product() {
             <Card.Body>
               <Card.Title>Usage & details</Card.Title>
               <Card.Text>
-                For general use only. Read instructions and consult a doctor if needed.
+                {product.usage}
               </Card.Text>
             </Card.Body>
           </Card>

@@ -1,21 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import products from '../data/products';
+import products from '../data/products.js';
+import galleryImages from '../data/gallery.js';
 import ImageWithFallback from '../components/ImageWithFallback';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import ProductCard from '../components/ProductCard';
 import Gallery from '../components/Gallery';
 
 export default function Home() {
-  const galleryImages = [
-    { src: process.env.PUBLIC_URL + '/images/shop.jpg', alt: 'Shop view' },
-    { src: process.env.PUBLIC_URL + '/images/owner.jpg', alt: 'Owner' },
-    { src: process.env.PUBLIC_URL + '/images/1.png', alt: 'Gallery image 1' },
-    { src: process.env.PUBLIC_URL + '/images/2.png', alt: 'Gallery image 2' },
-    { src: process.env.PUBLIC_URL + '/images/3.png', alt: 'Gallery image 3' },
-    { src: process.env.PUBLIC_URL + '/images/4.png', alt: 'Gallery image 4' },
-  ];
-
   return (
     <Container>
       <Row className="my-5 p-5 bg-light rounded-3">
